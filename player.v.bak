@@ -1,0 +1,93 @@
+module player(clk,musicnum,pause,mode,choice,outdata,musiclen);
+input clk;
+input [0:2] musicnum;
+input pause;
+input mode;
+input chocide;
+input [9:0] musiclen [0:3];
+output [15:0] outdata;
+
+//=======================
+// reg wire 
+//========================
+//reg [] cnt;
+reg [7:0] readaddr=0;
+reg flag = 1;
+
+//========================
+// struct coding
+//========================
+
+two_tigers twotigers(readaddr, clk, 1'b1, outdata);
+//rom1 rom11(readaddr, clk, 1'b1, outdata);
+//rom2 rom22(readaddr, clk, 1'b1, outdata);
+//rom3 rom33(readaddr, clk, 1'b1, outdata);
+
+/*
+always @(posedge clk)
+begin
+    if(readaddr == 7'd70)
+    begin
+        readaddr <= 0;
+    end
+    else
+    begin
+      readaddr <= readaddr + 1'b1;
+    end
+end
+*/
+
+//=================================================================
+//mode : 0 for play in order, 1 for random play, 2 for chosse play
+//==================================================================
+always @(posedge clk)
+begin
+    case(mode)
+    begin
+        0:begin
+            flag<=1;
+            if(readaddr>=musicnum[musicnum])
+            begin
+              readaddr <= 0;
+              musicnum <= musicnum+1'b1;
+            end
+            else
+            begin
+              readaddr <= readaddr+1'b1;
+            end
+          end
+        1:begin
+            if(flag)
+            begin
+              musicnum = {$random}%4;
+              flag <= 0;
+              readaddr <= 0;
+            end
+            if(readaddr>=musicnum[musicnum])
+            begin
+              readaddr <= 0;
+              flag<=1;
+              //musicnum <= musicnum+1'b1;
+            end
+            else
+            begin
+              readaddr <= readaddr+1'b1;
+            end
+          end
+        2:begin
+            musicnum <= choice;
+            flag <= 1;
+            if(readaddr>=musicnum[musicnum])
+            begin
+              readaddr <= 0;
+            end
+            else
+            begin
+              readaddr <= readaddr+1'b1;
+            end
+          end
+        default:
+    endcase
+end
+
+endmodule

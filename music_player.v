@@ -93,12 +93,34 @@ module music_player(
 //  REG/WIRE declarations
 //=======================================================
 
-
+wire clk_i2c;
+wire clk_mic;
+wire reset;
+wire [15:0] audiodata;
+wire [15:0] musicdata;
 
 
 //=======================================================
 //  Structural coding
 //=======================================================
+
+assign reset = ~KEY[0];
+
+audio_clk u1(CLOCK_50, reset,AUD_XCK, LEDR[9]);
+
+
+//I2C part
+clkgen #(10000) my_i2c_clk(CLOCK_50,reset,1'b1,clk_i2c);  //10k I2C clock
+
+clkgen #(6) my_i2c_clk1(CLOCK_50,reset,1'b1,clk_mic);  //2Hz music clock
+
+player myplayer(clk_mic,AUD_DACLRCK,SW[0],{SW[1],SW[2]},{SW[3],SW[4],SW[5]},musicdata,LEDR[6:4]);
+
+I2C_Audio_Config myconfig(clk_i2c, KEY[0],FPGA_I2C_SCLK,FPGA_I2C_SDAT,LEDR[2:0]);
+
+I2S_Audio myaudio(AUD_XCK, KEY[0], AUD_BCLK, AUD_DACDAT, AUD_DACLRCK, audiodata);
+
+Sin_Generator sin_wave(AUD_DACLRCK, KEY[0], musicdata, audiodata);//
 
 
 

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at player.v(55): always construct contains both blocking and non-blocking assignments File: D:/My_design/music_player/player.v Line: 55
