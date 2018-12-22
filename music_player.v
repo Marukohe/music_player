@@ -114,7 +114,8 @@ clkgen #(10000) my_i2c_clk(CLOCK_50,reset,1'b1,clk_i2c);  //10k I2C clock
 
 clkgen #(16) my_i2c_clk1(CLOCK_50,reset,1'b1,clk_mic);  //2Hz music clock
 
-player myplayer(clk_mic,AUD_DACLRCK,SW[0],{SW[1],SW[2]},{SW[3],SW[4],SW[5]},musicdata,LEDR[5:4]);
+player myplayer(clk_mic,AUD_DACLRCK,SW[0],{SW[1],SW[2],SW[3]},{SW[4],SW[5],SW[6]},musicdata,LEDR[5:4],
+					CLOCK_50,PS2_CLK,PS2_DAT,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
 
 I2C_Audio_Config myconfig(clk_i2c, KEY[0],FPGA_I2C_SCLK,FPGA_I2C_SDAT,LEDR[2:0]);
 
