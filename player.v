@@ -36,6 +36,8 @@ reg [8:0] keyraddr;
 reg [8:0] keywaddr;
 wire [15:0] keyoutput;
 wire wren;
+reg [8:0] keycnt=0;
+reg [2:0] readcnt;
 //========================
 // struct coding
 //========================
@@ -138,12 +140,26 @@ begin
 				keywrite <= 1'b1;
 				keyread <= 1'b0;
 				if(wren)
+				begin
 					keywaddr <= keywaddr+1'b1;
+					keycnt <= keycnt+1'b1;
+				end
 			  end
 			4:begin
 				keyread <=1'b1;
 				keywrite <= 1'b0;
-				keyraddr <= keyraddr+1'b1;
+				if(keyraddr >= keycnt)
+					keyraddr <= 0;
+				else
+				begin
+					if(readcnt >= 2'b11)
+					begin
+						readcnt <= 0;
+						keyraddr <= keyraddr+1'b1;
+					end
+					else
+						readcnt <= readcnt+1'b1;
+				end		
 				outdata <= micdata[4] * 65536/48000;
 			  end
 		default: flag <=1;
