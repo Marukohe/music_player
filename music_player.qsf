@@ -422,4 +422,5 @@ set_global_assignment -name QIP_FILE two_tigers.qip
 set_global_assignment -name VERILOG_FILE random.v
 set_global_assignment -name QIP_FILE little_star.qip
 set_global_assignment -name QIP_FILE fireworks.qip
+set_global_assignment -name QIP_FILE hope.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

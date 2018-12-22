@@ -1,5 +1,5 @@
 Flow report for music_player
-Sat Dec 22 22:19:14 2018
+Sat Dec 22 23:05:47 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Dec 22 22:19:03 2018       ;
+; Flow Status                     ; Successful - Sat Dec 22 23:05:37 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; music_player                                ;
 ; Top-level Entity Name           ; music_player                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 825 / 41,910 ( 2 % )                        ;
-; Total registers                 ; 177                                         ;
+; Logic utilization (in ALMs)     ; 816 / 41,910 ( 2 % )                        ;
+; Total registers                 ; 182                                         ;
 ; Total pins                      ; 168 / 499 ( 34 % )                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 28,864 / 5,662,720 ( < 1 % )                ;
+; Total block memory bits         ; 33,024 / 5,662,720 ( < 1 % )                ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/22/2018 22:17:33 ;
+; Start date & time ; 12/22/2018 23:04:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; music_player        ;
 +-------------------+---------------------+
@@ -78,12 +78,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 272903328235831.154548825200384        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 272903328235831.154549106515992        ; --            ; --          ; --         ;
 ; MISC_FILE                           ; audio_clk.cmp                          ; --            ; --          ; --         ;
 ; MISC_FILE                           ; audio_clk_sim/audio_clk.vo             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; two_tigers_bb.v                        ; --            ; --          ; --         ;
 ; MISC_FILE                           ; little_star_bb.v                       ; --            ; --          ; --         ;
 ; MISC_FILE                           ; fireworks_bb.v                         ; --            ; --          ; --         ;
+; MISC_FILE                           ; hope_bb.v                              ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -97,11 +98,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:26     ; 1.0                     ; 4882 MB             ; 00:00:40                           ;
-; Fitter                    ; 00:00:55     ; 1.1                     ; 6777 MB             ; 00:02:03                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4861 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.4                     ; 5229 MB             ; 00:00:13                           ;
-; Total                     ; 00:01:38     ; --                      ; --                  ; 00:03:03                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 4883 MB             ; 00:00:27                           ;
+; Fitter                    ; 00:00:47     ; 1.1                     ; 6778 MB             ; 00:01:42                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4867 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.4                     ; 5227 MB             ; 00:00:12                           ;
+; Total                     ; 00:01:18     ; --                      ; --                  ; 00:02:28                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -13,9 +13,10 @@ output [1:0] testdata;
 wire [2:0] randomdata;
 reg [10:0] readaddr=0;
 reg flag = 1;
+reg flag1 = 1;
 reg [9:0] musiclen [0:3];
 reg [1:0] musicnum = 0;
-wire [15:0] micdata [0:2];
+wire [15:0] micdata [0:3];
 //========================
 // struct coding
 //========================
@@ -23,7 +24,7 @@ wire [15:0] micdata [0:2];
 two_tigers twotigers(readaddr, clk_48hz, 1'b1, micdata[0]);
 little_star litterstar(readaddr, clk_48hz, 1'b1, micdata[1]);
 fireworks myfireworks(readaddr, clk_48hz, 1'b1, micdata[2]);
-//rom3 rom33(readaddr, clk, 1'b1, outdata);
+hope myhope(readaddr, clk_48hz, 1'b1, micdata[3]);
 
 /*
 always @(posedge clk)
@@ -50,7 +51,7 @@ begin
   musiclen[0] = 9'd270;
   musiclen[1] = 9'd220;
   musiclen[2] = 9'd260;
-  musiclen[3] = 4'd10;
+  musiclen[3] = 9'd260;
 end
 
 always @(posedge clk)
