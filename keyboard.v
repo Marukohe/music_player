@@ -81,17 +81,18 @@ module keyboard(clk,clrn,kbd_clk,kbd_data,freq,reset,hexc1,hexc2,hexc3,hexc4,hex
 	 begin
 	 case(data[7:0])
 		8'h1c: begin freq = 16'h0106; reset = 1'b1; end
-		8'h1b: begin freq = 16'h0115; reset = 1'b1; end
-		8'h23: begin freq = 16'h0126; reset = 1'b1; end
-		8'h2b: begin freq = 16'h0137; reset = 1'b1; end
-		8'h34: begin freq = 16'h014a; reset = 1'b1; end
-		8'h33: begin freq = 16'h015d; reset = 1'b1; end
-		8'h3b: begin freq = 16'h0172; reset = 1'b1; end
-		8'h42: begin freq = 16'h0188; reset = 1'b1; end
-		8'h4b: begin freq = 16'h019f; reset = 1'b1; end
-		8'h4c: begin freq = 16'h01b8; reset = 1'b1; end
-		8'h52: begin freq = 16'h01d2; reset = 1'b1; end 
-		8'h5a: begin freq = 16'h01ee; reset = 1'b1; end
+		8'h1b: begin freq = 16'h0126; reset = 1'b1; end
+		8'h23: begin freq = 16'h014a; reset = 1'b1; end
+		8'h2b: begin freq = 16'h015d; reset = 1'b1; end
+		8'h34: begin freq = 16'h0188; reset = 1'b1; end
+		8'h33: begin freq = 16'h01b8; reset = 1'b1; end
+		8'h3b: begin freq = 16'h01ee; reset = 1'b1; end
+		8'h42: begin freq = 16'h020b; reset = 1'b1; end
+		8'h4b: begin freq = 16'h024b; reset = 1'b1; end
+		8'h4c: begin freq = 16'h0293; reset = 1'b1; end
+		8'h52: begin freq = 16'h02ba; reset = 1'b1; end 
+		8'h5d: begin freq = 16'h0310; reset = 1'b1; end
+		8'h5a: begin freq = 16'h0370; reset = 1'b1; end
 		default: begin freq = 16'h0000; reset = 1'b0; end
 	 endcase
 	 

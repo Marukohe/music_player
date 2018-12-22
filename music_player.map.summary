@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Dec 23 01:21:23 2018
+Analysis & Synthesis Status : Successful - Sun Dec 23 01:51:36 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : music_player
 Top-level Entity Name : music_player
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 306
+Total registers : 307
 Total pins : 168
 Total virtual pins : 0
 Total block memory bits : 41,280

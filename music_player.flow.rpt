@@ -1,5 +1,5 @@
 Flow report for music_player
-Sun Dec 23 01:22:39 2018
+Sun Dec 23 01:52:51 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Dec 23 01:22:28 2018       ;
+; Flow Status                     ; Successful - Sun Dec 23 01:52:40 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; music_player                                ;
 ; Top-level Entity Name           ; music_player                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,275 / 41,910 ( 3 % )                      ;
-; Total registers                 ; 322                                         ;
+; Logic utilization (in ALMs)     ; 1,273 / 41,910 ( 3 % )                      ;
+; Total registers                 ; 323                                         ;
 ; Total pins                      ; 168 / 499 ( 34 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 41,280 / 5,662,720 ( < 1 % )                ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/23/2018 01:21:07 ;
+; Start date & time ; 12/23/2018 01:51:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; music_player        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 272903328235831.154549926615192        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 272903328235831.154550107908824        ; --            ; --          ; --         ;
 ; MISC_FILE                           ; audio_clk.cmp                          ; --            ; --          ; --         ;
 ; MISC_FILE                           ; audio_clk_sim/audio_clk.vo             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; two_tigers_bb.v                        ; --            ; --          ; --         ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 4892 MB             ; 00:00:29                           ;
-; Fitter                    ; 00:00:54     ; 1.1                     ; 6792 MB             ; 00:01:59                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 4873 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.6                     ; 5239 MB             ; 00:00:16                           ;
-; Total                     ; 00:01:29     ; --                      ; --                  ; 00:02:51                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4892 MB             ; 00:00:27                           ;
+; Fitter                    ; 00:00:54     ; 1.1                     ; 6786 MB             ; 00:02:01                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4863 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.6                     ; 5237 MB             ; 00:00:15                           ;
+; Total                     ; 00:01:27     ; --                      ; --                  ; 00:02:50                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
