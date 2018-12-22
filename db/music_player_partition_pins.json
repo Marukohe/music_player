@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_DACDAT",
 					"strict" : false
 				},
@@ -37,6 +45,26 @@
 				},
 				{
 					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{

@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sat Dec 22 17:51:50 2018
+Fitter Status : Successful - Sat Dec 22 22:18:54 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : music_player
 Top-level Entity Name : music_player
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 447 / 41,910 ( 1 % )
-Total registers : 174
+Logic utilization (in ALMs) : 825 / 41,910 ( 2 % )
+Total registers : 177
 Total pins : 168 / 499 ( 34 % )
 Total virtual pins : 0
-Total block memory bits : 18,432 / 5,662,720 ( < 1 % )
-Total RAM Blocks : 3 / 553 ( < 1 % )
+Total block memory bits : 28,864 / 5,662,720 ( < 1 % )
+Total RAM Blocks : 5 / 553 ( < 1 % )
 Total DSP Blocks : 0 / 112 ( 0 % )
 Total HSSI RX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )

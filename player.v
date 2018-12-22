@@ -6,26 +6,26 @@ input [1:0] mode;
 input [2:0] choice;
 output reg [15:0] outdata;
 //reg [15:0] outdata;
-output [2:0] testdata;
+output [1:0] testdata;
 //=======================
 // reg wire 
 //========================
 wire [2:0] randomdata;
-reg [7:0] readaddr=0;
+reg [10:0] readaddr=0;
 reg flag = 1;
 reg [9:0] musiclen [0:3];
-reg [2:0] musicnum = 0;
-wire [15:0] micdata;
+reg [1:0] musicnum = 0;
+wire [15:0] micdata [0:2];
 //========================
 // struct coding
 //========================
 
-two_tigers twotigers(readaddr, clk, 1'b1, micdata);
-//rom1 rom11(readaddr, clk, 1'b1, outdata);
-//rom2 rom22(readaddr, clk, 1'b1, outdata);
+two_tigers twotigers(readaddr, clk_48hz, 1'b1, micdata[0]);
+little_star litterstar(readaddr, clk_48hz, 1'b1, micdata[1]);
+fireworks myfireworks(readaddr, clk_48hz, 1'b1, micdata[2]);
 //rom3 rom33(readaddr, clk, 1'b1, outdata);
 
-
+/*
 always @(posedge clk)
 begin
     if(readaddr == 7'd70)
@@ -38,7 +38,7 @@ begin
       outdata <= micdata * 65536/48000;
     end
 end
-
+*/
 
 random myrandom(clk,randomdata);
 assign testdata = musicnum;
@@ -47,12 +47,12 @@ assign testdata = musicnum;
 //==================================================================
 always @(*)
 begin
-  musiclen[0] = 7'd70;
-  musiclen[1] = 4'd10;
-  musiclen[2] = 4'd10;
+  musiclen[0] = 9'd270;
+  musiclen[1] = 9'd220;
+  musiclen[2] = 9'd260;
   musiclen[3] = 4'd10;
 end
-/*
+
 always @(posedge clk)
 begin
 if(pause==0)
@@ -63,7 +63,7 @@ begin
             if(readaddr>=musiclen[musicnum])
             begin
               readaddr <= 0;
-              if(musicnum >= 2'b11)
+              if(musicnum == 2'b11)
                 musicnum <= 0;
               else
                 musicnum <= musicnum+1'b1;
@@ -71,7 +71,7 @@ begin
             else
             begin
               readaddr <= readaddr+1'b1;
-              outdata <= micdata;
+              outdata <= micdata[musicnum] * 65536/48000;
             end
           end
         1:begin
@@ -90,7 +90,7 @@ begin
             else
             begin
               readaddr <= readaddr+1'b1;
-              outdata <= micdata;
+              outdata <= micdata[musicnum] * 65536/48000;
             end
           end
         2:begin
@@ -103,7 +103,7 @@ begin
             else
             begin
               readaddr <= readaddr+1'b1;
-              outdata <= micdata;
+              outdata <= micdata[musicnum] * 65536/48000;
             end
           end
 		default: flag <=1;
@@ -114,5 +114,5 @@ begin
   outdata <= 0;
 end    
 end
-*/
-endmodule
+
+endmodule 
