@@ -200,6 +200,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},
@@ -244,11 +248,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
 					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				}
 			]

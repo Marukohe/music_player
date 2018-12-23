@@ -98,8 +98,13 @@ wire clk_mic;
 wire reset;
 wire [15:0] audiodata;
 wire [15:0] musicdata;
-
-
+wire [15:0] recorddata;
+wire [15:0] repeatdata;
+reg [15:0] outputdata;
+reg [17:0] rptraddr=0;
+reg [17:0] rptwaddr=0;
+reg [17:0] rptcnt = 0;
+//reg [17:0] 
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -115,14 +120,58 @@ clkgen #(10000) my_i2c_clk(CLOCK_50,reset,1'b1,clk_i2c);  //10k I2C clock
 clkgen #(16) my_i2c_clk1(CLOCK_50,reset,1'b1,clk_mic);  //2Hz music clock
 
 player myplayer(clk_mic,AUD_DACLRCK,SW[0],{SW[1],SW[2],SW[3]},{SW[4],SW[5],SW[6]},musicdata,LEDR[5:4],
-					CLOCK_50,PS2_CLK,PS2_DAT,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
+					CLOCK_50,PS2_CLK,PS2_DAT,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,SW[7]);
 
 I2C_Audio_Config myconfig(clk_i2c, KEY[0],FPGA_I2C_SCLK,FPGA_I2C_SDAT,LEDR[2:0]);
 
-I2S_Audio myaudio(AUD_XCK, KEY[0], AUD_BCLK, AUD_DACDAT, AUD_DACLRCK, audiodata);
+I2S_Audio myaudio(AUD_XCK, KEY[0], AUD_BCLK, AUD_DACDAT, AUD_DACLRCK, outputdata);
 
 Sin_Generator sin_wave(AUD_DACLRCK, KEY[0], musicdata, audiodata);//
 
+I2S_Audioin myaudioin(AUD_XCK, KEY[0], AUD_ADCDAT, AUD_ADCLRCK, recorddata);
 
+repeater myrepeater(recorddata,rptraddr,AUD_ADCLRCK,SW[8],rptwaddr,AUD_ADCLRCK,~KEY[1],repeatdata);
+
+always @(posedge AUD_ADCLRCK)
+begin
+	if(KEY[1]==0)
+	begin	
+		if(rptwaddr >= 18'd199999)
+		begin
+			rptwaddr <= 0;
+			rptcnt <= 0;
+		end
+		else
+		begin
+			rptwaddr <= rptwaddr+1'b1;
+			rptcnt <= rptcnt+1'b1;
+		end
+	end
+	if(KEY[0]==0)
+	begin
+		rptwaddr <= 0;
+		rptcnt <= 0;
+	end
+end
+
+always @(posedge AUD_ADCLRCK)
+begin
+	if(SW[8])
+	begin
+		if(rptraddr >= rptcnt+8'hff)
+			rptraddr <= 0;
+		else
+			rptraddr <= rptraddr+1'b1;
+			//rptcnt <= rptcnt+1'b1;
+	end
+end
+
+always @(posedge AUD_ADCLRCK)
+begin
+	if(SW[8])
+	 outputdata <= repeatdata;
+	else
+	 outputdata <= audiodata;
+end
 
 endmodule

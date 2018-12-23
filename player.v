@@ -1,5 +1,5 @@
 module player(clk,clk_48hz,pause,mode,choice,outdata,testdata,
-		CLOCK_50,PS2_CLK,PS2_DAT,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
+		CLOCK_50,PS2_CLK,PS2_DAT,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,repeater);
 input clk;
 input clk_48hz;
 input pause;
@@ -9,6 +9,7 @@ output reg [15:0] outdata;
 //reg [15:0] outdata;
 output [1:0] testdata;
 
+input repeater;
 input CLOCK_50;
 inout PS2_CLK;
 inout PS2_DAT;
@@ -77,7 +78,7 @@ end
 
 always @(posedge clk)
 begin
-if(pause==0)
+if(pause==0&&repeater==0)
 begin
     case(mode)
         0:begin

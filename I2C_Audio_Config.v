@@ -34,7 +34,7 @@ begin
 	audio_reg[4]= 7'h03; audio_cmd[4]=9'h79; //Right Volume
 	audio_reg[5]= 7'h07; audio_cmd[5]=9'h1;  //I2S format
 	audio_reg[6]= 7'h09; audio_cmd[6]=9'h1;  //Active
-	audio_reg[7]= 7'h04; audio_cmd[7]=9'h16; //Analog path
+	audio_reg[7]= 7'h04; audio_cmd[7]=9'h14; //Analog path
 	audio_reg[8]= 7'h05; audio_cmd[8]=9'h06;  //Digital path
 
 end
