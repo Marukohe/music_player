@@ -63,8 +63,9 @@ hope myhope(readaddr, clk_48hz, 1'b1, micdata[3]);
 random myrandom(clk,randomdata);
 assign testdata = musicnum;
 
-//=================================================================
-//mode : 0 for play in order, 1 for random play, 2 for chosse play
+//==================================================================
+//mode : 0 for play in order, 1 for random play, 2 for choose play
+//       3 record from keyboard, 4 keyborad music play
 //==================================================================
 always @(*)
 begin
@@ -162,6 +163,11 @@ begin
 				end		
 				outdata <= micdata[4] * 65536/48000;
 			  end
+			 5:begin
+				 keyread <= 0;
+				 keywrite <= 0;
+				 outdata <= keyoutput * 65536/48000;
+				end
 		default: flag <=1;
     endcase
 end
